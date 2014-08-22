@@ -1,0 +1,610 @@
+
+.containeratom {
+  width: 250px;
+  height: 250px;
+  position: relative;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.wrap,
+.circle {
+  /* -webkit-transition: -webkit-transform 500ms linear;
+  -webkit-transform-style: preserve-3d;
+  -moz-transition: -moz-transform 500ms linear;
+  -moz-transform-style: preserve-3d; */
+  width: 250px;
+  height: 250px;
+  margin: auto;
+
+  position: absolute;
+}
+.circle {
+  position: absolute;
+  border: 3px solid #aaaaaa;
+  border-radius: 250px;
+  margin: auto;
+}
+.circle.c2,
+.circle.center {
+  border: 2px solid #666666;
+  width: 140px;
+  height: 140px;
+  top: 55px;
+  left: 55px;
+}
+.circle.center {
+  background: #ffffff;
+  width: 30px;
+  height: 30px;
+  top: 110px;
+  left: 110px;
+  box-shadow: 0 0 5px #fff;
+}
+.wrap-electron {
+  border: 0px solid  #fff;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* -webkit-animation: electron 3s linear infinite;
+  -moz-animation: electron 3s linear infinite; */
+}
+.electron {
+  width: 12px;
+  height: 12px;
+  background: #aaaaaa;
+  left: 50%;
+  margin-left: -8px;
+  border: none;
+  top: -7px;
+  -webkit-transform-origin: 50% 50%;
+}
+/* .c2 .wrap-electron {
+  -webkit-animation: electron 2s linear infinite;
+  -moz-animation: electron 2s linear infinite;
+} */
+/* .c2 .electron {
+  top: -6px;
+} */
+.wrap {
+  border: 0px solid #aaaaaa;
+-webkit-animation: lateral 15s ease-in-out infinite;
+-moz-animation: lateral 15s ease-in-out infinite;
+}
+.wrapx {
+  border: 0px solid #aaaaaa;
+/*   -webkit-animation: lateral 15s ease-in-out infinite;
+-moz-animation: lateral 15s ease-in-out infinite; */
+width: 250px;
+  height: 250px;
+  margin: auto;
+
+  position: absolute;
+}
+/* .wrap.r {
+  -webkit-animation: lateralRevert 8s linear infinite;
+  -moz-animation: lateralRevert 8s linear infinite;
+} */
+.vertical {
+  -webkit-animation: vertical 8s linear infinite;
+  -moz-animation: vertical 8s linear infinite;
+}
+.horizontal {
+  -webkit-animation: horizontalRevert 6s linear infinite;
+  -moz-animation: horizontalRevert 6s linear infinite;
+}
+.vertical.c2 {
+  -webkit-animation: vertical 4s linear infinite;
+  -moz-animation: vertical 4s linear infinite;
+}
+.horizontal.c2 {
+  -webkit-animation: horizontalRevert 3s linear infinite;
+  -moz-animation: horizontalRevert 3s linear infinite;
+}
+
+@-webkit-keyframes electron {
+  from {
+    -webkit-transform: rotateZ(0deg);
+  }
+  to {
+    -webkit-transform: rotateZ(360deg);
+  }
+}
+@-webkit-keyframes horizontal {
+  from {
+    -webkit-transform: rotateY(0deg);
+  }
+  to {
+    -webkit-transform: rotateY(360deg);
+  }
+}
+@-webkit-keyframes horizontalRevert {
+  from {
+    -webkit-transform: rotateY(360deg);
+  }
+  to {
+    -webkit-transform: rotateY(0deg);
+  }
+}
+@-webkit-keyframes vertical {
+  from {
+    -webkit-transform: rotateX(0deg);
+  }
+  to {
+    -webkit-transform: rotateX(360deg);
+  }
+}
+@-webkit-keyframes verticalRevert {
+  from {
+    -webkit-transform: rotateX(360deg);
+  }
+  to {
+    -webkit-transform: rotateX(0deg);
+  }
+}
+@-webkit-keyframes lateral {
+  from {
+    -webkit-transform: rotateZ(0deg);
+  }
+  to {
+    -webkit-transform: rotateZ(360deg);
+  }
+}
+@-webkit-keyframes lateralRevert {
+  from {
+    -webkit-transform: rotateZ(360deg);
+  }
+  to {
+    -webkit-transform: rotateZ(0deg);
+  }
+}
+@-moz-keyframes electron {
+  from {
+    -moz-transform: rotateZ(0deg);
+  }
+  to {
+    -moz-transform: rotateZ(360deg);
+  }
+}
+@-moz-keyframes horizontal {
+  from {
+    -moz-transform: rotateY(0deg);
+  }
+  to {
+    -moz-transform: rotateY(360deg);
+  }
+}
+@-moz-keyframes horizontalRevert {
+  from {
+    -moz-transform: rotateY(360deg);
+  }
+  to {
+    -moz-transform: rotateY(0deg);
+  }
+}
+@-moz-keyframes vertical {
+  from {
+    -moz-transform: rotateX(0deg);
+  }
+  to {
+    -moz-transform: rotateX(360deg);
+  }
+}
+@-moz-keyframes verticalRevert {
+  from {
+    -moz-transform: rotateX(360deg);
+  }
+  to {
+    -moz-transform: rotateX(0deg);
+  }
+}
+@-moz-keyframes lateral {
+  from {
+    -moz-transform: rotateZ(0deg);
+  }
+  to {
+    -moz-transform: rotateZ(360deg);
+  }
+}
+@-moz-keyframes lateralRevert {
+  from {
+    -moz-transform: rotateZ(360deg);
+  }
+  to {
+    -moz-transform: rotateZ(0deg);
+  }
+}
+
+
+.charIntro{
+  background: url();
+}
+
+.mess{
+  background: url("../img/QM_0048_fondomodal.png");
+  width: 678px;
+  height: 449px;
+  padding: 20px;
+  position: absolute;
+  z-index: 2000;
+  display: none;
+  margin-left: 130px;
+  margin-top: 50px;
+}
+
+.messIntro{
+  background: url("../img/QM_0050_fondointro.png");
+  width: 945px;
+  height: 550px;
+  padding: 20px;
+  position: absolute;
+  margin-left: -15px;
+  z-index: 2000;
+  display: none;
+}
+
+.charIntro{
+  background: url("../img/QM_0051_personajeIntro.png");
+  width: 263px;
+  height: 467px;
+  float:right;
+}
+
+.charLost{
+  background: url("../img/QM__0002_personaje-triste-copy.png");
+  width: 417px;
+  height: 467px;
+  float:right;
+}
+
+.charCall{
+  background: url("../img/QM__0000_telefono.png");
+  width: 261px;
+  height: 400px;
+  position: absolute;
+  margin-left: 453px;
+  margin-top: 40px;
+}
+
+.logoIntro{
+  background: url("../img/QM_0052_logoIntro.png");
+  width: 460px;
+  height: 379px;
+  float: right;
+}
+
+.logoLost{
+  background: url("../img/QM__0006_logotipoperdiste.png");
+  width: 415px;
+  height: 408px;
+  float: right;
+}
+
+.textLost{
+  background: url("../img/QM__0005_¡HAS-PERDIDO!--ESTUVISTE-CERCA-DE-SER-UN-MILLONARIO.-copy.png");
+  width: 374px;
+  height: 74px;
+  position: absolute;
+  margin-top: 330px;
+  margin-left: 96px;
+}
+
+.textQHelp{
+  background: url("../img/QM__0060_necesitaayuda.png");
+  width: 360px;
+  height: 35px;
+  position: absolute;
+  margin-top: 215px;
+  margin-left: 96px;
+}
+
+.textPHelp{
+  background: url("../img/QM__0060_necesitaayuda.png");
+  width: 360px;
+  height: 35px;
+  position: absolute;
+  margin-top: 250px;
+  margin-left: 152px;
+}
+
+.text5050{
+  background: url("../img/QM_0049_5050.png");
+  width: 349px;
+  height: 152px;
+  position: absolute;
+  margin-top: 110px;
+  margin-left: 155px;
+}
+
+.bars{
+  position: absolute;
+  margin-top: 20px;
+  margin-left: 186px;
+  width: 290px;
+  height: 219px;
+  border-bottom: 10px solid white;
+  border-left: 10px solid white;
+}
+
+.bar{
+  width: 40px;
+  bottom: 0;
+  position: absolute;
+  border-top-width: 0;
+  background-color: white;
+  margin-top: 149px;
+}
+
+#bara{
+  margin-left: 20px;
+}
+#barb{
+  margin-left: 85px;
+}
+#barc{
+  margin-left: 150px;
+}
+#bard{
+  margin-left: 215px;
+}
+
+.globoAyuda{
+  background: url("../img/QM__0061_globoayuda.png");
+  width: 380px;
+  height: 180px;
+  position: absolute;
+  margin-top: 25px;
+  margin-left: 95px;
+}
+
+.logo{
+  background: url("../img/QM__0046_logotipo.png");
+  background-size: 250px 235px;
+  background-position: 5px;
+}
+
+.brillo{
+  background: url("../img/QM__0047_brillologo.png");
+  background-size: 250px 250px;
+  width: 250px;
+  height: 250px;
+  background-position: 5px;
+  background-repeat: no-repeat;
+
+}
+
+.btnJugar{
+  background: url("../img/QM_0052_backbutton.png");
+  width: 271px;
+  height: 65px;
+  color: white;
+  font-size: 30px;
+  border: 0px;
+  position: absolute;
+  margin-left: 275px;
+  margin-top: 400px;
+}
+
+.btnContinuar{
+  background: url("../img/QM_0052_backbutton.png");
+  width: 271px;
+  height: 65px;
+  color: white;
+  font-size: 30px;
+  border: 0px;
+  position: absolute;
+  margin-left: 195px;
+  margin-top: 325px;
+}
+
+.btnLost{
+  background: url("../img/QM_0052_backbutton.png");
+  width: 271px;
+  height: 65px;
+  color: white;
+  font-size: 25px;
+  border: 0px;
+  position: absolute;
+  margin-left: 147px;
+  margin-top: 420px;
+}
+
+.btnSi{
+  background: url("../img/QM__0053_sinobot.png");
+  width: 64px;
+  height: 65px;
+  color: white;
+  font-size: 25px;
+  border: 0px;
+  position: absolute;
+  margin-left: 207px;
+  margin-top: 300px;
+}
+
+.btnNo{
+  background: url("../img/QM__0053_sinobot.png");
+  width: 64px;
+  height: 65px;
+  color: white;
+  font-size: 25px;
+  border: 0px;
+  position: absolute;
+  margin-left: 390px;
+  margin-top: 300px;
+}
+
+.colorQA{
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  border-color: white;
+  border-width: 3px;
+  border:solid;
+  color: white;
+  background-color: #000d4c;
+  text-align: center;
+  display: inline-table;
+  padding:10px;
+  margin: 10px;
+  /* font-size: 19px; */
+}
+
+.qSize{
+  width: 655px;
+  height: 73px;
+}
+
+.aSize{
+  width: 338px;
+  height: 65px;
+  cursor: pointer; 
+  cursor: hand;
+}
+
+.backgroundGame{
+  height: 550px;
+  width:945px;
+  background: url("../img/fondogenral.jpg");
+}
+
+
+
+.gameArea{
+width: 761px;
+height: 550px:;
+float: left;
+margin-top: 0px;
+}
+
+.pointsArea{
+  width: 144px;
+  height: 550px;
+  float:left;
+  margin-right: 10px;
+  border-right: solid white 3px;
+  -webkit-box-shadow: 12px 0px 17px 0px rgba(50, 50, 50, 0.5);
+  -moz-box-shadow:    12px 0px 17px 0px rgba(50, 50, 50, 0.5);
+  box-shadow:         12px 0px 17px 0px rgba(50, 50, 50, 0.5);
+}
+
+.containerhelps{
+  display: inline-block;
+}
+
+.spanLetter {
+float: left;
+
+margin-left: 10px;
+font-weight: bold;
+font-size: 25px;
+}
+
+.answer{
+  vertical-align:-webkit-baseline-middle;
+
+}
+
+.question{
+  vertical-align:-webkit-baseline-middle;
+}
+
+.questionContainer{
+  text-align: center;
+}
+
+.answerContainer{
+  text-align: center;
+}
+
+hr{
+  margin-top: 0px;
+  border-top: 3px solid white;
+}
+
+.questLine1{
+  position: absolute;
+  width: 65px;
+  margin-left: 144px;
+  margin-top: 330px;
+}
+
+.questLine2{
+  position: absolute;
+  width: 68px;
+  margin-left: 862px;
+  margin-top: 330px;
+}
+
+.ans1{
+  position: absolute;
+  width: 44px;
+  margin-left: 144px;
+  margin-top: 418px;
+}
+
+.ans2{
+  position: absolute;
+  width: 48px;
+  margin-left: 882px;
+  margin-top: 418px;
+}
+
+.ans3{
+  position: absolute;
+  width: 48px;
+  margin-left: 882px;
+  margin-top: 503px; 
+}
+
+.ans4{
+  position: absolute;
+  width: 44px;
+  margin-left: 144px;
+  margin-top: 503px;
+}
+
+.btn5050A{
+  cursor: pointer; 
+  cursor: hand;
+  background: url("../img/QM__0017_50_50_activo.png");
+}
+
+.btn5050I{
+  background: url("../img/QM__0014_50_50_inactivo.png");
+}
+
+.btnFriendA{
+  cursor: pointer; 
+  cursor: hand;
+  background: url("../img/QM__0016_llamada_activo.png");
+}
+
+.btnFriendI{
+  background: url("../img/QM__0013_llamada_inactivo.png");
+}
+
+.btnPublicA{
+  cursor: pointer; 
+  cursor: hand;
+  background: url("../img/QM__0015_publico_activo.png");
+}
+
+.btnPublicI{
+  background: url("../img/QM__0012_publico_inactivo.png");
+}
+
+.btnHelp{
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+}
+
+.containerhelps{
+  position: absolute;
+  margin-top: 230px;
+  margin-left: 60px;
+}
+.headerContainer{
+  height: 285px;
+
+}

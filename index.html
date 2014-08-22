@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="store">
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quien quiere ser millonario</title>
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+  <script type="text/javascript" src="js/preguntas.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+  </head>
+  <body>
+
+    <div class="container backgroundGame">
+      <hr class="questLine1">
+      <hr class="questLine2">
+      <hr class="ans1">
+      <hr class="ans2">
+      <hr class="ans3">
+      <hr class="ans4">
+			
+      <div id="modal" class="">
+      	<!-- <h1 id="mstit">sadfadsf</h1>
+      	<div  class="ms1">adsfasdf</div>
+      	<div class="ms2">asdfasdfasdf</div> -->
+      	<div id="bars" class="">
+      		<div id="bara" class=""></div>
+      		<div id="barb" class=""></div>
+      		<div id="barc" class=""></div>
+      		<div id="bard" class=""></div>
+      	</div>
+      	<div id="char" class=""></div>
+      	<div id="infocenter" class=""></div>
+      	<div id="infotext" class=""></div>
+        <button id="btn1" type="button" class="btn btn-success">Continuar</button>
+        <button id="btn2" type="button" class="btn btn-danger">Cancelar</button>
+        
+      </div>
+
+      <div class="pointsArea"></div>
+      <div class="gameArea">
+        <div class="headerContainer">
+            <div class="containerhelps">
+              <div id="btn5050"  class="btnHelp btn5050A"></div>
+              <div id="btnFriend"  class="btnHelp btnFriendA"></div>
+              <div id="btnPublic"  class="btnHelp btnPublicA"></div>
+            </div>
+            <div class="containeratom">
+              <div class="wrap">
+                <div class="circle horizontal c1">
+                  <div class="wrap-electron">
+                    
+                  </div>
+                </div>
+                <div class="circle vertical c1">
+                  <div class="wrap-electron">
+                    
+                  </div>
+                </div>
+              </div>
+              <div class="wrap brillo"></div>
+              <div class="wrapx r logo">
+                <!-- <div class="circle horizontal c2">
+                  <div class="wrap-electron">
+                    <div class="circle electron"></div>
+                  </div>
+                </div>
+                <div class="circle vertical c2">
+                  <div class="wrap-electron">
+                    <div class="circle electron"></div>
+                  </div>
+                </div>
+                <div class="circle center"></div> -->
+              </div>
+            </div>
+          
+        </div>
+        
+        <div class="questionContainer">
+
+          <div class="colorQA qSize" >
+            <div id="question" class="question">asdfasdf</div>
+          </div>
+        </div>
+        <div class="answerContainer">
+          <div class="colorQA aSize">           
+            <span class="spanLetter">A.</span> <sapn id="answer1" class="answer right" bar="bara">asdf</span>
+          </div>
+          <div class="colorQA aSize">
+            <span class="spanLetter">B.</span> <span id="answer2" class="answer left" bar="barb">asdf</span>
+          </div>
+          <div class="colorQA aSize">
+            <span class="spanLetter">C.</span> <span id="answer3" class="answer right" bar="barc">asdf</span>
+          </div>
+          <div class="colorQA aSize">
+            <span class="spanLetter">D.</span> <span id="answer4" class="answer left" bar="bard">asdf</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
