@@ -303,7 +303,7 @@ width: 250px;
   width: 360px;
   height: 35px;
   position: absolute;
-  margin-top: 250px;
+  margin-top: 275px;
   margin-left: 152px;
 }
 
@@ -418,7 +418,7 @@ width: 250px;
   border: 0px;
   position: absolute;
   margin-left: 207px;
-  margin-top: 300px;
+  margin-top: 315px;
 }
 
 .btnNo{
@@ -430,7 +430,7 @@ width: 250px;
   border: 0px;
   position: absolute;
   margin-left: 390px;
-  margin-top: 300px;
+  margin-top: 315px;
 }
 
 .colorQA{
@@ -607,4 +607,21 @@ hr{
 .headerContainer{
   height: 285px;
 
+}
+
+.callRight{
+  background-color:#F4FF00;
+  color:#000d4c;
+}
+.lettersBars{
+  color: white;
+  margin-top: 220px;
+  font-size: 20px;
+}
+
+.letterBars{
+  margin-left: 33px;
+  margin-right: 17px;
+  font-weight: bold;
+  display: inline;
 }

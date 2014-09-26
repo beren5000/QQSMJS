@@ -8,10 +8,23 @@ var init = function(){
   putQuestion(quest[qCount]);
   console.log("asdfasdfasdfasdfsdfasdfasdfasdf");
   $("#btn5050").removeClass('btn5050I').addClass('btn5050A');
+  $("#btnPublic").removeClass('btnPublicI').addClass('btnPublicA');
+  $("#btnFriend").removeClass('btnFriendI').addClass('btnFriendA');
   
+   
   $("#btn5050").bind("click",function() {
-    console.log("asdfasdfasdfdsasdadsfasdfs");
-      h5050();
+      message(m5050);
+
+    });
+
+    $("#btnFriend").bind("click",function() {
+      message(mLlamada);
+
+    });
+
+    $("#btnPublic").bind("click",function() {
+      message(mPublic);
+
     });
 
 };
@@ -45,10 +58,9 @@ var h5050 = function(){
 
 var hCall = function(){
   helps.friend = 1;
-  var answers = $(".answer[right=0]")
-  $(answers[0]).css("color","#000d4c");
-  $(answers[1]).css("color","#000d4c");
-  $(answers[2]).css("color","#000d4c");
+  var right = $(".answer[right=1]").parent();
+  $(right).addClass('callRight');
+  $(".answer[right=1]").css("color","#000d4c");
 
   //console.log(x,indexes,answers);
 
@@ -156,6 +168,8 @@ var message = function(info){
   $("#btn1").removeClass();
   $("#btn2").removeClass();
   $("#bars").removeClass();
+  $(".lettersBars").hide();
+  
 
   btn1.unbind();
   btn2.unbind();
@@ -185,7 +199,7 @@ var message = function(info){
     $("#modal").addClass('messIntro');
     $("#char").addClass('charIntro');
     $("#infocenter").addClass('logoIntro');
-    $("#btn1").addClass('btnJugar').html("JUGAR");
+    $("#btn1").addClass('btnJugar').html("CONTINUAR");
     console.log("respuesta Correcta");
     btn1.bind("click",function(event) {
       if(info.callback){
@@ -249,15 +263,15 @@ var message = function(info){
     btn1.toggle();
     btn2.toggle();
   };
-
   
   if(info.type==6){
     $("#modal").addClass('mess');
-    $("#bars").addClass('bars')
-    $("#bara").addClass('bar')
-    $("#barb").addClass('bar')
-    $("#barc").addClass('bar')
-    $("#bard").addClass('bar')
+    $("#bars").addClass('bars');
+    $("#bara").addClass('bar');
+    $("#barb").addClass('bar');
+    $("#barc").addClass('bar');
+    $("#bard").addClass('bar');
+    $(".lettersBars").show();
     $("#infotext").addClass('textPHelp');
     $("#btn1").addClass('btnSi').html("SI");
     $("#btn2").addClass('btnNo').html("NO");
@@ -305,6 +319,7 @@ var getQuestions = function (x, level){
 
 var putQuestion = function(q){
   $("#question").html(q.pregunta);
+  $(".answer").parent().removeClass('callRight');
   var indexes = [];
   
   for (i = 1; i <= 4; i++) {
@@ -321,10 +336,6 @@ var putQuestion = function(q){
   }
   
 };
-
-/*var questioning = function (q,l){
-  putQuestion(quest[q]);
-};*/
 
 var checkAnswer = function (elemn){
   if(elemn.attr("right")=="1") {
@@ -357,7 +368,7 @@ var checkAnswer = function (elemn){
   }
 };
 
-var init = function(){
+/*var init = function(){
   message(mWellcome);
   qCount = 0;
   lvlCount = 1;
@@ -366,28 +377,16 @@ var init = function(){
   putQuestion(quest[qCount]);
   //alert("bienvenido a Quien quiere ser millonario");
 
-};
+};*/
 
 $( document ).ready(function() {
     init();
     
-    $(".aSize").click(function() {
+   $(".aSize").click(function() {
       checkAnswer($($(this).children()[1]));
     });
+  
 
-    $("#btn5050").bind("click",function() {
-      message(m5050);
-      //h5050();
-    });
-
-    $("#btnFriend").bind("click",function() {
-      message(mLlamada);
-      //h5050();
-    });
-
-    $("#btnPublic").bind("click",function() {
-      message(mPublic);
-      //h5050();
-    });
+    
     
 });
