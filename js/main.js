@@ -6,13 +6,20 @@ var init = function(){
   qAns = 0;
   quest = getQuestions(qPerLevel,'nivel'+lvlCount);
   putQuestion(quest[qCount]);
-  console.log("asdfasdfasdfasdfsdfasdfasdfasdf");
+  /*console.log("asdfasdfasdfasdfsdfasdfasdfasdf");*/
+  $('.point').removeClass('pointPlay');
+  $($('.point').get().reverse()[qAns]).addClass("pointPlay");
   $("#btn5050").removeClass('btn5050I').addClass('btn5050A');
   $("#btnPublic").removeClass('btnPublicI').addClass('btnPublicA');
   $("#btnFriend").removeClass('btnFriendI').addClass('btnFriendA');
-  
    
-  $("#btn5050").bind("click",function() {
+   $("#btn5050").unbind();
+
+    $("#btnFriend").unbind();
+
+    $("#btnPublic").unbind();
+   
+    $("#btn5050").bind("click",function() {
       message(m5050);
 
     });
@@ -44,7 +51,7 @@ var h5050 = function(){
   x = randNotInArray(2,indexes);
   indexes.push(x);
   $(answers[x]).css("color","#000d4c");
-  console.log(x,indexes, answers);
+ /* console.log(x,indexes, answers);*/
   
   x = randNotInArray(2,indexes);
   indexes.push(x);
@@ -80,7 +87,7 @@ var hPublic = function(){
     {
       value  = Math.floor(Math.random()*(110-10+1)+10);
     }
-    console.log(value);
+    /*console.log(value);*/
     var toBar = "#"+$(this).attr("bar");
     $(toBar).animate({ height: value }, 1500);
     
@@ -136,6 +143,22 @@ var mPublic = {
   "callback":hPublic
 };
 
+var mNewLvl = {
+  "type":7,
+  "tit":"Felicitaciones, respuesta correcta"
+};
+
+var mLast = {
+  "type":8,
+  "tit":"ultima pregunta"
+};
+
+var mWinner = {
+  "type":9,
+  "tit":"ultima pregunta",
+  "callback":init
+};
+
 var qPerLevel = 5;
 var qCount = 0;
 var lvlCount = 1;
@@ -144,7 +167,7 @@ var qAns = 0;
 
 var messageToggle = function(callback){
   if(callback){
-    console.log("has callback");
+    /*console.log("has callback");*/
     $("#modal").fadeToggle(500,function(){callback()});
     //$(".mess").animate({height: "toggle"},500,function(){callback()});
     
@@ -157,7 +180,7 @@ var messageToggle = function(callback){
 };
 
 var message = function(info){
-  console.log(info);
+  /*console.log(info);*/
   var btn1 = $("#btn1");
   var btn2 = $("#btn2");
 
@@ -181,7 +204,7 @@ var message = function(info){
     $("#char").addClass('charIntro');
     $("#infocenter").addClass('logoIntro');
     $("#btn1").addClass('btnJugar').html("JUGAR");
-    console.log("bienvenida");
+    /*console.log("bienvenida");*/
     btn1.bind("click",function(event) {
       
       if(info.callback){
@@ -199,8 +222,9 @@ var message = function(info){
     $("#modal").addClass('messIntro');
     $("#char").addClass('charIntro');
     $("#infocenter").addClass('logoIntro');
+    $("#infotext").addClass('textNivel');
     $("#btn1").addClass('btnJugar').html("CONTINUAR");
-    console.log("respuesta Correcta");
+    /*console.log("respuesta Correcta");*/
     btn1.bind("click",function(event) {
       if(info.callback){
         messageToggle(info.callback);
@@ -218,7 +242,7 @@ var message = function(info){
     $("#infocenter").addClass('logoLost');
     $("#infotext").addClass('textLost');
     $("#btn1").addClass('btnLost').html("VOLVER A JUGAR");
-    console.log("respuesta Incorrecta");
+    /*console.log("respuesta Incorrecta");*/
     btn1.bind("click",function(event) {
       if(info.callback){
         messageToggle(info.callback);
@@ -235,7 +259,7 @@ var message = function(info){
     $("#infocenter").addClass('text5050');
     $("#btn1").addClass('btnSi').html("SI");
     $("#btn2").addClass('btnNo').html("NO");
-    console.log("5050");
+    /*console.log("5050");*/
     btn1.bind("click",function(event) {
       messageToggle(info.callback);
     });
@@ -253,7 +277,7 @@ var message = function(info){
     $("#infotext").addClass('textQHelp');
     $("#btn1").addClass('btnSi').html("SI");
     $("#btn2").addClass('btnNo').html("NO");
-    console.log("5050");
+    /*console.log("5050");*/
     btn1.bind("click",function(event) {
       messageToggle(info.callback);
     });
@@ -275,7 +299,7 @@ var message = function(info){
     $("#infotext").addClass('textPHelp');
     $("#btn1").addClass('btnSi').html("SI");
     $("#btn2").addClass('btnNo').html("NO");
-    console.log("publico");
+    /*console.log("publico");*/
     btn1.bind("click",function(event) {
       info.callback();
     });
@@ -284,6 +308,60 @@ var message = function(info){
     });
     btn1.toggle();
     btn2.toggle();
+  };
+
+  if(info.type==7){
+    $("#modal").addClass('messIntro');
+    $("#char").addClass('charPersp');
+    $("#infocenter").addClass('logoIntro');
+    $("#infotext").addClass('textSiguiente');
+    $("#btn1").addClass('btnContinuarLvl').html("CONTINUAR");
+    console.log("respuesta Correcta, sgt nivel");
+    btn1.bind("click",function(event) {
+      if(info.callback){
+        messageToggle(info.callback);
+      }
+      else{
+        messageToggle();
+      }
+    });
+    btn1.toggle();
+  };
+
+  if(info.type==8){
+    $("#modal").addClass('messIntro');
+    $("#char").addClass('charPersp');
+    $("#infocenter").addClass('logoIntro');
+    $("#infotext").addClass('textUltima');
+    $("#btn1").addClass('btnContinuarLvl').html("CONTINUAR");
+    console.log("respuesta Correcta, sgt nivel");
+    btn1.bind("click",function(event) {
+      if(info.callback){
+        messageToggle(info.callback);
+      }
+      else{
+        messageToggle();
+      }
+    });
+    btn1.toggle();
+  };
+
+  if(info.type==9){
+    $("#modal").addClass('messIntro');
+    $("#char").addClass('charIntro');
+    $("#infocenter").addClass('logoIntro');
+    $("#infotext").addClass('textGanador');
+    $("#btn1").addClass('btnWin').html("JUGAR DE NUEVO");
+    console.log("respuesta Correcta, sgt nivel");
+    btn1.bind("click",function(event) {
+      if(info.callback){
+        messageToggle(info.callback);
+      }
+      else{
+        messageToggle();
+      }
+    });
+    btn1.toggle();
   };
 
   //$("#mstit").html(info.tit);
@@ -339,45 +417,52 @@ var putQuestion = function(q){
 
 var checkAnswer = function (elemn){
   if(elemn.attr("right")=="1") {
-    message(mCongrat);
+    
     if(qAns>qMax){
-      alert("FELICITACIONES HAS GANADO");
-      init();
+      message(mWinner);
+
     }
     else if(qAns==qMax){
-      alert("Ultima pregunta");
+      if(qCount+1 >= qPerLevel){
+        message(mLast);
+        qCount = 0;
+        lvlCount++;
+        quest = getQuestions(qPerLevel,'nivel'+lvlCount);
+        putQuestion(quest[qCount]);
+      }
+      else{
+        message(mLast);
+        qCount = qCount +1;
+        putQuestion(quest[qCount]);
+      }
+      $($('.point').get().reverse()[qAns]).removeClass("pointPlay");
       qAns++;
+      $($('.point').get().reverse()[qAns]).addClass("pointPlay");
     }
     else{
+      if(qCount+1 >= qPerLevel){
+        message(mNewLvl);
+        qCount = 0;
+        lvlCount++;
+        quest = getQuestions(qPerLevel,'nivel'+lvlCount);
+        putQuestion(quest[qCount]);
+      }
+      else{
+        message(mCongrat);
+        qCount = qCount +1;
+        putQuestion(quest[qCount]);
+      }
+      $($('.point').get().reverse()[qAns]).removeClass("pointPlay");
       qAns++;
+      $($('.point').get().reverse()[qAns]).addClass("pointPlay");
     }
-    if(qCount+1 >= qPerLevel){
-      console.count
-      qCount = 0;
-      lvlCount++;
-      quest = getQuestions(qPerLevel,'nivel'+lvlCount);
-      putQuestion(quest[qCount]);
-    }
-    else{
-      qCount = qCount +1;
-      putQuestion(quest[qCount]);
-    }
+    
+
   }
   else{
     message(mError);
   }
 };
-
-/*var init = function(){
-  message(mWellcome);
-  qCount = 0;
-  lvlCount = 1;
-  qAns = 0;
-  quest = getQuestions(qPerLevel,'nivel'+lvlCount);
-  putQuestion(quest[qCount]);
-  //alert("bienvenido a Quien quiere ser millonario");
-
-};*/
 
 $( document ).ready(function() {
     init();
@@ -385,8 +470,5 @@ $( document ).ready(function() {
    $(".aSize").click(function() {
       checkAnswer($($(this).children()[1]));
     });
-  
-
-    
     
 });

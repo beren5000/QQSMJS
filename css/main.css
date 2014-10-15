@@ -251,8 +251,15 @@ width: 250px;
 }
 
 .charLost{
-  background: url("../img/QM__0002_personaje-triste-copy.png");
+  background: url("../img/QM__0002_personaje-triste.png");
   width: 417px;
+  height: 467px;
+  float:right;
+}
+
+.charPersp{
+  background: url("../img/QM__0001_personaje-perspicaz.png");
+  width: 270px;
   height: 467px;
   float:right;
 }
@@ -287,6 +294,42 @@ width: 250px;
   position: absolute;
   margin-top: 330px;
   margin-left: 96px;
+}
+
+.textSiguiente{
+  background: url("../img/QM__0004_nuevo_nivel.png");
+  width: 425px;
+  height: 70px;
+  position: absolute;
+  margin-top: 360px;
+  margin-left: 195px;
+}
+
+.textGanador{
+  background: url("../img/millonario_ganador.png");
+  width: 425px;
+  height: 59px;
+  position: absolute;
+  margin-top: 360px;
+  margin-left: 195px;
+}
+
+.textUltima{
+  background: url("../img/millonario_ultima.png");
+  width: 425px;
+  height: 59px;
+  position: absolute;
+  margin-top: 360px;
+  margin-left: 195px;
+}
+
+.textNivel{
+  background: url("../img/QM__0000_correcta.png");
+  width: 290px;
+  height: 82px;
+  position: absolute;
+  margin-top: 360px;
+  margin-left: 265px;
 }
 
 .textQHelp{
@@ -382,7 +425,7 @@ width: 250px;
   border: 0px;
   position: absolute;
   margin-left: 275px;
-  margin-top: 400px;
+  margin-top: 445px;
 }
 
 .btnContinuar{
@@ -395,6 +438,30 @@ width: 250px;
   position: absolute;
   margin-left: 195px;
   margin-top: 325px;
+}
+
+.btnContinuarLvl{
+  background: url("../img/QM_0052_backbutton.png");
+  width: 271px;
+  height: 65px;
+  color: white;
+  font-size: 30px;
+  border: 0px;
+  position: absolute;
+  margin-left: 275px;
+  margin-top: 430px;
+}
+
+.btnWin{
+  background: url("../img/QM_0052_backbutton.png");
+  width: 271px;
+  height: 65px;
+  color: white;
+  font-size: 25px;
+  border: 0px;
+  position: absolute;
+  margin-left: 275px;
+  margin-top: 430px;
 }
 
 .btnLost{
@@ -624,4 +691,32 @@ hr{
   margin-right: 17px;
   font-weight: bold;
   display: inline;
+}
+
+ul
+{
+    list-style-type: none;
+}
+
+.point{
+  text-align: center;
+  font-weight: bolder;
+  width: 130px;
+  height: 31px;
+  background-color:rgba(255,255,255,0.6);
+  margin-top: 5px;
+}
+
+.pointContainer{
+  margin-top: 30px;
+  margin-left: -55px;
+}
+
+.safe{
+  background-color:rgba(255,255,0,0.8);
+}
+
+.pointPlay{
+  width: 140px;
+  background-color:rgba(0,255,255,0.6);
 }
